@@ -12,9 +12,20 @@
   <body>
     <div class="header">
       <h3><span>DepuySynthes-Kanto5Dst-</span></h3>
+      </div>
     </div>
-    <div class="contents">
-      <%= yield %>
+    <% if user_signed_in? %>
+      <div class="contents">
+        <%= link_to "新規登録", new_user_registration_path, method: :get, class: "menu" %>
+        <%= link_to "ログイン", new_user_session_path, method: :get, class: "menu" %>
+      </div>
+    <% else %>
+      <div class="contents">
+        <%= yield %>
+      </div>
+    <% end %>
+    <div class="footer">
+      <small>© 2020 DPS_Kohei_Asahi inc.</small>
     </div>
   </body>
 </html>
