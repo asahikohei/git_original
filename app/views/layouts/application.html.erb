@@ -16,12 +16,12 @@
     </div>
     <% if user_signed_in? %>
       <div class="contents">
-        <%= link_to "新規登録", new_user_registration_path, method: :get, class: "menu" %>
-        <%= link_to "ログイン", new_user_session_path, method: :get, class: "menu" %>
+        <%= yield %>
       </div>
     <% else %>
       <div class="contents">
-        <%= yield %>
+        <%= link_to "新規登録", new_user_registration_path, method: :get, class: "menu" %>
+        <%= link_to "ログイン", new_user_session_path, method: :get, class: "menu" %>
       </div>
     <% end %>
     <div class="footer">
